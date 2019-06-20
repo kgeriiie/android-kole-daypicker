@@ -2,7 +2,7 @@
 
 Simple library for picking a date between a given intervall. You can select day by swiping, tapping on selector. You can customize all essential view on picker. Basically the picker use a default implementation for display dates.
 
-![How does it look like](https://github.com/kgeriiie/KoleDayPicker/blob/master/promo-res/day_demo.mp4)
+![How does it look like](https://github.com/kgeriiie/KoleDayPicker/blob/master/promo-res/day_demo.gif)
 
 # Usage
 
