@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="java.util.Locale"/>
+        <variable name="cell" type="hu.kole.daypicker.data.DayCell"/>
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical" android:layout_width="@dimen/default_day_view_width"
+                  android:layout_height="@dimen/default_day_view_height"
+                  android:gravity="center_vertical">
+
+        <!--12-->
+        <TextView
+                android:id="@+id/calendar_day_nameTv"
+                style="@style/DateNameNormalTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{cell.getDefaultNameOfDay(Locale.ENGLISH)}"
+                android:gravity="center"/>
+
+        <!--30-->
+        <TextView
+                style="@style/DateNumberNormalTextStyle"
+                android:id="@+id/calendar_day_numberTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{cell.getDefaultNumberOfDay(Locale.ENGLISH)}"
+                android:gravity="center"
+                android:layout_marginTop="-3dp"/>
+
+        <View
+                android:id="@+id/calendar_day_indicator"
+                android:layout_width="35dp"
+                android:layout_height="3dp"
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/colorIndicator"/>
+
+        <View
+                android:id="@+id/calendar_current_day_indicator"
+                android:layout_width="3dp"
+                android:layout_height="3dp"
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/shape_white_circle_3dp"/>
+    </LinearLayout>
+</layout>
