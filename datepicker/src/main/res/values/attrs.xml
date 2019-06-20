@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="DayPickerView">
+    <declare-styleable name="KoleDayPickerView">
         <attr name="titleSize" format="dimension" />
         <attr name="titleColor" format="reference" />
         <attr name="titleFont" format="reference" />

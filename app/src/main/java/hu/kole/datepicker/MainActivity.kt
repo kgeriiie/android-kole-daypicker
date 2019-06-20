@@ -4,7 +4,7 @@ import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import hu.kole.datepicker.databinding.ActivityMainBinding
-import hu.kole.daypicker.view.DayPickerView
+import hu.kole.daypicker.view.KoleDayPickerView
 import hu.kole.daypicker.callbacks.OnDaySelectedListener
 import hu.kole.daypicker.data.DayCell
 import hu.kole.daypicker.default.DefaultDayAdapter
@@ -20,16 +20,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        adapter.submitList(DayPickerView.getInitDateCells(Date(), Date().getNextDay(DayPickerView.OFFSET_FORWARD)))
+        adapter.submitList(KoleDayPickerView.getInitDayCells(Date(), Date().getNextDay(KoleDayPickerView.OFFSET_FORWARD)))
 
         binding.picker.adapter = adapter
 
         //binding.picker.adapter?.selectedItemPosition = 2
 
-        binding.picker.setOnDateSelectedListener(object: OnDaySelectedListener {
+        binding.picker.setOnDaySelectedListener(object: OnDaySelectedListener {
             override fun onDaySelected(selected: DayCell) {
                 //Log.d("test--","selected: ${selected.date}")
             }
         })
+
     }
 }

@@ -30,7 +30,7 @@ fun List<Date>.toDateCellList(): List<DayCell> {
     return result
 }
 
-class DayPickerView<T: DayCell, VH: BaseDayViewHolder<T>>: FrameLayout {
+class KoleDayPickerView<T: DayCell, VH: BaseDayViewHolder<T>>: FrameLayout {
     constructor(context: Context): this(context, null, -1)
     constructor(context: Context, attrs: AttributeSet?): this(context, attrs, -1)
     constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int): super(context, attrs, defStyleAttr){
@@ -60,16 +60,16 @@ class DayPickerView<T: DayCell, VH: BaseDayViewHolder<T>>: FrameLayout {
         }
 
     private fun handleAttributeSet(attrs: AttributeSet) {
-        val a = context.theme.obtainStyledAttributes(attrs, R.styleable.DayPickerView, 0, 0)
+        val a = context.theme.obtainStyledAttributes(attrs, R.styleable.KoleDayPickerView, 0, 0)
 
-        day_picker_month.setTextSize(TypedValue.COMPLEX_UNIT_PX, a.getDimension(R.styleable.DayPickerView_titleSize, defaultTextSize))
+        day_picker_month.setTextSize(TypedValue.COMPLEX_UNIT_PX, a.getDimension(R.styleable.KoleDayPickerView_titleSize, defaultTextSize))
 
         try {
-            day_picker_month.typeface = ResourcesCompat.getFont(context, a.getResourceId(R.styleable.DayPickerView_titleFont, 0))
+            day_picker_month.typeface = ResourcesCompat.getFont(context, a.getResourceId(R.styleable.KoleDayPickerView_titleFont, 0))
         } catch (e: Resources.NotFoundException) {
         }
 
-        day_picker_month.setTextColor(a.getColor(R.styleable.DayPickerView_titleColor, defaultTextColor))
+        day_picker_month.setTextColor(a.getColor(R.styleable.KoleDayPickerView_titleColor, defaultTextColor))
 
         a.recycle()
     }
@@ -95,7 +95,7 @@ class DayPickerView<T: DayCell, VH: BaseDayViewHolder<T>>: FrameLayout {
             return dateList
         }
 
-        fun getInitDateCells(start: Date, end: Date): List<DayCell> {
+        fun getInitDayCells(start: Date, end: Date): List<DayCell> {
             val dateList = getDateListBetween(start, end).toDateCellList().toMutableList()
 
             dateList.add(0, DayCell.firstPlaceholder(start.getPreviousDay()))
@@ -121,7 +121,7 @@ class DayPickerView<T: DayCell, VH: BaseDayViewHolder<T>>: FrameLayout {
         return adapter?.selectedDate
     }
 
-    fun setOnDateSelectedListener(listener: OnDaySelectedListener?) {
+    fun setOnDaySelectedListener(listener: OnDaySelectedListener?) {
         adapter?.daySelectedListener = listener
     }
 }

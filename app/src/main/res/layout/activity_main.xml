@@ -8,7 +8,7 @@
             android:layout_height="match_parent"
             tools:context="hu.kole.datepicker.MainActivity">
 
-        <hu.kole.daypicker.view.DayPickerView
+        <hu.kole.daypicker.view.KoleDayPickerView
                 android:id="@+id/picker"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

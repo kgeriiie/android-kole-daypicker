@@ -41,7 +41,7 @@ publish {
     artifactId = artifactProjectID
     publishVersion = publishVersionID
     desc = 'Android library for picking day from a horizontal date list.'
-    website = 'http'
+    website = 'https://github.com/kgeriiie/KoleDayPicker'
 
 }
 
