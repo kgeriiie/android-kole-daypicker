@@ -12,12 +12,12 @@ import hu.kole.daypicker.extensions.setStyle
 import java.util.*
 
 class DefaultPaddingViewHolder(private val view: DefaultPlaceholderView): BaseDayViewHolder<DayCell>(view) {
-    override fun setup(data: DayCell) {
-        view.setData(data)
+    override fun setup(cellData: DayCell) {
+        view.setData(cellData)
     }
 }
 
-class DefaultPlaceholderView(context: Context?, res: Int, itemWidth: Int) : PlaceholderView(context, res, itemWidth) {
+class DefaultPlaceholderView(context: Context, res: Int, itemWidth: Int) : PlaceholderView(context, res, itemWidth) {
     override fun onAttachCell(day: DayCell, view: View) {
         view.findViewById<TextView>(R.id.calendar_day_nameTv).apply {
             text = day.getDefaultNameOfDay(Locale.ENGLISH)

@@ -20,7 +20,7 @@ object Utils {
     fun getScreenWidth(context: Context) : Int {
         val displayMetrics = DisplayMetrics()
         if (context is Activity) {
-            (context as Activity).windowManager.defaultDisplay.getMetrics(displayMetrics)
+            context.windowManager.defaultDisplay.getMetrics(displayMetrics)
         }
 
         return displayMetrics.widthPixels

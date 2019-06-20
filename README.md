@@ -28,3 +28,9 @@ This view will fill the space at the begining and end of the list. It will displ
 
 ##### Setup callbacks
 You can set Day selection chaned listener. ***setOnDaySelectedListener***
+
+# Download
+### Gradle
+```groovy
+implementation "compile 'hu.kole.daypicker:daypicker:0.1"
+```
